@@ -65,7 +65,50 @@ public class Part3
         }while(gene != "");
     
       }
+      
+       int countGenes(String DNA){
+    
+           int count = 0;
+           int startIndex = 0;
+           int index = -1;
+           do
+          {
+                startIndex = DNA.indexOf("ATG" , index + 1);
+                if(startIndex == -1)
+                   break;
+           
+                   index = findStopCodon(DNA , startIndex ,"TAA");
+                if(index == DNA.length()){
+            
+                   index = findStopCodon(DNA , startIndex , "TAG");
+                }
+               
+                if(index == DNA.length())
+                   break; 
+                   count = count+1;
+             
+           }while(true);
+    
+         return count;
+    
+    }
+    
+    void testCountGenes(){
+    
+         String DNA = "ATAATAAATAATAAATAGATTAGAATGTAG";
+         System.out.println("Number of genes in sequence :" + DNA + "  " + "is :" + countGenes(DNA));
+       
+         DNA = "GATCGATAGGGGACTGATAGATGTATCTGGATAGATTCAA";
+         System.out.println("Number of genes in sequence :" + DNA + "  " + "is :" + countGenes(DNA));
+       
+         DNA = "ATGTAAGATGCCCTAGT";
+         System.out.println("Number of genes in sequence :" + DNA + "  " + "is :" + countGenes(DNA));
+    
+         DNA = "";
+         System.out.println("Number of genes in sequence :" + DNA + "  " + "is :" + countGenes(DNA));
     
     
+     }
+      
     
 }
