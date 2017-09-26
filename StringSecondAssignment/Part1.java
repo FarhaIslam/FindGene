@@ -55,6 +55,48 @@ public class Part1
     
     }
     
+  String findGene(String DNA){
+      
+        int startIndex = DNA.indexOf("ATG");
+        
+        if(startIndex == -1)
+             return "";
+        
+        int index = findStopCodon(DNA , startIndex , "TAA");
+        if(index == DNA.length()){
+             index = findStopCodon(DNA , startIndex , "TAG");
+            }
+        if(index == DNA.length()) 
+             return "";
+        else
+             return DNA.substring(startIndex , index + 3);
+    
+    }
+  
+    void testFindGene(){
+    
+        String DNA = "ATACGATATTATACCCGAGAT";
+        System.out.println("DNA :" + DNA);
+        System.out.println("Gene :" + findGene(DNA));
+        
+        DNA = "ATACGATATTATAACCCGAGAT";
+        System.out.println("DNA :" + DNA);
+        System.out.println("Gene :" + findGene(DNA));
+        
+        DNA = "ATGACGATATAATATAACCCGAGAT";
+        System.out.println("DNA :" + DNA);
+        System.out.println("Gene :" + findGene(DNA));
+        
+        DNA = "ATGACGATAGTAATATAACCCGAGAT";
+        System.out.println("DNA :" + DNA);
+        System.out.println("Gene :" + findGene(DNA));
+        
+        DNA = "ATGACGATAGTAATAAGTCCCTAGGAGAT";
+        System.out.println("DNA :" + DNA);
+        System.out.println("Gene :" + findGene(DNA));
+    }
+     
+    
 }   
     
     
