@@ -15,7 +15,7 @@ public class Part2
     
            return count;
 
-       }
+      }
  
     void testHowmany(){
       
@@ -27,6 +27,8 @@ public class Part2
         stringa = "GAA";
         System.out.println(howMany(stringa , stringb));
     
-    
-       }   
+        stringb = "ATGAACCCAATTGAATC";
+        stringa = "CCC";
+        System.out.println(howMany(stringa , stringb));
+      }   
 }
