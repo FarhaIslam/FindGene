@@ -3,10 +3,10 @@ public class Part2
 {
     int howMany(String stringa , String stringb){
  
-            int count = 0;
-            int index = -1;
+           int count = 0;
+           int index = -1;
    
-            do{
+           do{
                 index = stringb.indexOf(stringa , index + stringa.length());
                 if(index != -1)
                       count = count + 1;
