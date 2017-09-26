@@ -21,4 +21,33 @@ public class Part2
     
     
      }
+     
+   int  countCTG(String dna){
+    
+       int count = 0;
+       int index = -1;
+       do{
+    
+          index = dna.indexOf("CTG", index + 1);
+          if(index != -1)
+               count = count + 1;
+     
+          }while(index != -1);
+    
+         return count;
+    
+     } 
+    
+    
+   void testCountCTG(){
+    
+      String dna = "CTGCTGCTGAATCGTCTG";
+      System.out.println(countCTG(dna));
+      
+      dna = "AATAATAATTAAGATCTATCGA";
+      System.out.println(countCTG(dna));
+    
+    
+     }   
+
 }
