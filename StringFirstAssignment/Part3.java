@@ -64,7 +64,7 @@ public class Part3
         else
            System.out.println(twoOccurrence(stringa , stringb));
         
-        /*stringa = "an";
+        stringa = "an";
         stringb = "banana";
         System.out.println(stringa);
         System.out.println(stringb);
@@ -74,11 +74,11 @@ public class Part3
         stringb = "forest";
         System.out.println(stringa);
         System.out.println(stringb);
-        System.out.println(lastPart(stringa , stringb));*/
+        System.out.println(lastPart(stringa , stringb));
            
     }
         
-  
+}  
     
     
     
@@ -87,4 +87,4 @@ public class Part3
     
     
     
-}
+
