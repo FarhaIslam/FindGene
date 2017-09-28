@@ -6,7 +6,7 @@ public class Part4
     
     URLResource res = new URLResource("http://www.dukelearntoprogram.com/course2/data/manylinks.html");
     for(String s : res.words()){
-    
+     String sCopy = s; 
      s = s.toLowerCase();
      int index = s.indexOf("youtube.com");
      
@@ -15,6 +15,12 @@ public class Part4
         index = s.indexOf("\"");
         int endIndex = s.indexOf("\"" , index + 1);
         System.out.println(s.substring(index + 1 , endIndex));
+        
+        
+        int startIndex = s.lastIndexOf("\"" , index - 1);
+        index = s.indexOf("\"" , index);
+        System.out.println(sCopy.substring(startIndex + 1 , index));
+        
            }
     
        }
